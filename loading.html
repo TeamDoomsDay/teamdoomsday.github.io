@@ -83,31 +83,8 @@
   <div id="loader">
     <canvas id="loader-canvas"></canvas>
     <div class="loader-content">
-      <svg class="loader-logo" viewBox="0 0 120 120">
-        <!-- Outer ring -->
-        <circle cx="60" cy="60" r="55" fill="none" stroke="#ff003c" stroke-width="1" opacity="0.3"/>
-        <circle cx="60" cy="60" r="55" fill="none" stroke="#ff003c" stroke-width="2"
-          stroke-dasharray="80 200" stroke-linecap="round">
-          <animateTransform attributeName="transform" type="rotate"
-            from="0 60 60" to="360 60 60" dur="4s" repeatCount="indefinite"/>
-        </circle>
-        <!-- Inner ring -->
-        <circle cx="60" cy="60" r="40" fill="none" stroke="#ff003c" stroke-width="1"
-          stroke-dasharray="50 150" stroke-linecap="round" opacity="0.5">
-          <animateTransform attributeName="transform" type="rotate"
-            from="360 60 60" to="0 60 60" dur="3s" repeatCount="indefinite"/>
-        </circle>
-        <!-- Skull icon -->
-        <circle cx="60" cy="48" r="16" fill="none" stroke="#ff003c" stroke-width="2"/>
-        <circle cx="53" cy="45" r="3" fill="#ff003c"/>
-        <circle cx="67" cy="45" r="3" fill="#ff003c"/>
-        <path d="M54 54 L60 58 L66 54" fill="none" stroke="#ff003c" stroke-width="1.5"/>
-        <path d="M44 72 Q44 62 60 62 Q76 62 76 72" fill="none" stroke="#ff003c" stroke-width="2"/>
-        <line x1="50" y1="62" x2="50" y2="68" stroke="#ff003c" stroke-width="1" opacity="0.5"/>
-        <line x1="55" y1="62" x2="55" y2="70" stroke="#ff003c" stroke-width="1" opacity="0.5"/>
-        <line x1="60" y1="62" x2="60" y2="70" stroke="#ff003c" stroke-width="1" opacity="0.5"/>
-        <line x1="65" y1="62" x2="65" y2="70" stroke="#ff003c" stroke-width="1" opacity="0.5"/>
-        <line x1="70" y1="62" x2="70" y2="68" stroke="#ff003c" stroke-width="1" opacity="0.5"/>
+       <svg class="loader-logo" viewBox="0 0 120 120">
+      <img src="/gallery/logo.png" alt="D00msDay Logo"class="loader-logo"/> 
       </svg>
       <div class="loader-brand">&lt;D00msDay/&gt;</div>
       <div class="token-stream" id="tokenStream"></div>
