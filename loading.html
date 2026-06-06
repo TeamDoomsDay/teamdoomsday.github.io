@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D00msDay — Initializing...</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #050505; color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      min-height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #loader {
+      position: fixed; inset: 0; z-index: 99999;
+      background: #050505;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+    #loader.fade-out { opacity: 0; visibility: hidden; }
+
+    canvas#loader-canvas {
+      position: absolute; inset: 0; z-index: 0;
+    }
+
+    .loader-content {
+      position: relative; z-index: 1;
+      text-align: center;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 32px;
+    }
+
+    /* Logo */
+    .loader-logo {
+      width: 120px; height: 120px;
+      animation: logo-pulse 2s ease-in-out infinite;
+    }
+    @keyframes logo-pulse {
+      0%, 100% { filter: drop-shadow(0 0 20px rgba(255,0,60,0.3)); }
+      50% { filter: drop-shadow(0 0 40px rgba(255,0,60,0.6)); }
+    }
+
+    .loader-brand {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem; font-weight: 900;
+      letter-spacing: 8px; color: #fff;
+    }
+    .loader-brand span { color: #ff003c; }
+
+    /* Token stream */
+    .token-stream {
+      height: 24px; overflow: hidden;
+      font-size: 0.8rem; color: #ff003c;
+      letter-spacing: 2px; opacity: 0.7;
+      width: 300px; text-align: center;
+    }
+
+    /* Progress */
+    .loader-progress {
+      width: 260px; height: 2px;
+      background: rgba(255,0,60,0.15);
+      border-radius: 2px; overflow: hidden;
+    }
+    .loader-progress-bar {
+      height: 100%; width: 0%;
+      background: #ff003c;
+      box-shadow: 0 0 10px rgba(255,0,60,0.5);
+      transition: width 0.3s ease;
+    }
+
+    .loader-status {
+      font-size: 0.7rem; color: #888;
+      letter-spacing: 2px; text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOADER OVERLAY -->
+  <div id="loader">
+    <canvas id="loader-canvas"></canvas>
+    <div class="loader-content">
+      <svg class="loader-logo" viewBox="0 0 120 120">
+        <!-- Outer ring -->
+        <circle cx="60" cy="60" r="55" fill="none" stroke="#ff003c" stroke-width="1" opacity="0.3"/>
+        <circle cx="60" cy="60" r="55" fill="none" stroke="#ff003c" stroke-width="2"
+          stroke-dasharray="80 200" stroke-linecap="round">
+          <animateTransform attributeName="transform" type="rotate"
+            from="0 60 60" to="360 60 60" dur="4s" repeatCount="indefinite"/>
+        </circle>
+        <!-- Inner ring -->
+        <circle cx="60" cy="60" r="40" fill="none" stroke="#ff003c" stroke-width="1"
+          stroke-dasharray="50 150" stroke-linecap="round" opacity="0.5">
+          <animateTransform attributeName="transform" type="rotate"
+            from="360 60 60" to="0 60 60" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <!-- Skull icon -->
+        <circle cx="60" cy="48" r="16" fill="none" stroke="#ff003c" stroke-width="2"/>
+        <circle cx="53" cy="45" r="3" fill="#ff003c"/>
+        <circle cx="67" cy="45" r="3" fill="#ff003c"/>
+        <path d="M54 54 L60 58 L66 54" fill="none" stroke="#ff003c" stroke-width="1.5"/>
+        <path d="M44 72 Q44 62 60 62 Q76 62 76 72" fill="none" stroke="#ff003c" stroke-width="2"/>
+        <line x1="50" y1="62" x2="50" y2="68" stroke="#ff003c" stroke-width="1" opacity="0.5"/>
+        <line x1="55" y1="62" x2="55" y2="70" stroke="#ff003c" stroke-width="1" opacity="0.5"/>
+        <line x1="60" y1="62" x2="60" y2="70" stroke="#ff003c" stroke-width="1" opacity="0.5"/>
+        <line x1="65" y1="62" x2="65" y2="70" stroke="#ff003c" stroke-width="1" opacity="0.5"/>
+        <line x1="70" y1="62" x2="70" y2="68" stroke="#ff003c" stroke-width="1" opacity="0.5"/>
+      </svg>
+      <div class="loader-brand">&lt;D00msDay/&gt;</div>
+      <div class="token-stream" id="tokenStream"></div>
+      <div class="loader-progress">
+        <div class="loader-progress-bar" id="progressBar"></div>
+      </div>
+      <div class="loader-status" id="loaderStatus">Initializing...</div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT (hidden until loaded) -->
+  <div id="mainContent" style="display:none;">
+    <!-- This is a passthrough — content loads from index.html via redirect -->
+  </div>
+
+  <script>
+    // =========================================
+    // TOKEN STREAM GENERATOR
+    // =========================================
+    const tokenStream = document.getElementById('tokenStream');
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
+    function randomToken(len) {
+      let t = '';
+      for (let i = 0; i < len; i++) t += chars[Math.floor(Math.random() * chars.length)];
+      return t;
+    }
+    setInterval(() => {
+      tokenStream.textContent = 'TKN:' + randomToken(24);
+    }, 120);
+
+    // =========================================
+    // PROGRESS + STATUS
+    // =========================================
+    const progressBar = document.getElementById('progressBar');
+    const loaderStatus = document.getElementById('loaderStatus');
+    const stages = [
+      { p: 15,  s: 'Establishing connection...' },
+      { p: 30,  s: 'Verifying session...' },
+      { p: 45,  s: 'Loading assets...' },
+      { p: 60,  s: 'Initializing modules...' },
+      { p: 75,  s: 'Decrypting content...' },
+      { p: 88,  s: 'Finalizing environment...' },
+      { p: 100, s: 'Access granted.' },
+    ];
+    let stageIdx = 0;
+    function advanceStage() {
+      if (stageIdx < stages.length) {
+        progressBar.style.width = stages[stageIdx].p + '%';
+        loaderStatus.textContent = stages[stageIdx].s;
+        stageIdx++;
+        if (stageIdx < stages.length) {
+          setTimeout(advanceStage, 400 + Math.random() * 600);
+        } else {
+          setTimeout(() => {
+            document.getElementById('loader').classList.add('fade-out');
+            setTimeout(() => {
+              window.location.href = 'index.html';
+            }, 800);
+          }, 500);
+        }
+      }
+    }
+    setTimeout(advanceStage, 600);
+
+    // =========================================
+    // MATRIX RAIN (full screen)
+    // =========================================
+    const cvs = document.getElementById('loader-canvas');
+    const c = cvs.getContext('2d');
+    let cw, ch, cCols, cDrops;
+    const mChars = '01アイウエオカキクケコサシスセソタチツテト';
+
+    function mResize() {
+      cw = cvs.width = window.innerWidth;
+      ch = cvs.height = window.innerHeight;
+      cCols = Math.floor(cw / 16);
+      cDrops = Array(cCols).fill(0).map(() => Math.random() * -80);
+    }
+    function mDraw() {
+      c.fillStyle = 'rgba(5,5,5,0.05)';
+      c.fillRect(0, 0, cw, ch);
+      c.font = '16px monospace';
+      for (let i = 0; i < cDrops.length; i++) {
+        const ch = mChars[Math.floor(Math.random() * mChars.length)];
+        c.fillStyle = `rgba(255,0,60,${0.2 + Math.random() * 0.4})`;
+        c.fillText(ch, i * 16, cDrops[i] * 16);
+        if (cDrops[i] * 16 > ch && Math.random() > 0.98) cDrops[i] = 0;
+        cDrops[i]++;
+      }
+    }
+    mResize();
+    window.addEventListener('resize', mResize);
+    setInterval(mDraw, 45);
+  </script>
+</body>
+</html>

@@ -1,16 +1,16 @@
-## Hi there 👋
+# Gallery Images
 
-<!--
-**TeamDoomsDay/TeamDoomsDay** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Place your actual images in this folder:
 
-Here are some ideas to get you started:
+## Hall of Fame
+- hall_of_fame_1.png
+- hall_of_fame_2.png
+- hall_of_fame_3.png
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Event Gallery
+- event1.jpg
+- event2.jpg
+- certificate1.jpg
+- certificate2.jpg
+
+Once you add real images, the website will display them automatically.

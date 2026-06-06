@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D00msDay | Cybersecurity Team</title>
+  <meta name="description" content="Official website of D00msDay, a cybersecurity CTF and hackathon team focused on offensive security, digital forensics, research, and innovation.">
+  <meta name="keywords" content="CTF, cybersecurity, hackathon, ethical hacking, D00msDay, Coventry University">
+  <meta name="author" content="D00msDay">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://teamdoomsday.github.io/">
+  <meta property="og:title" content="D00msDay | Cybersecurity Team">
+  <meta property="og:description" content="Elite cybersecurity CTF and hackathon team. We Are the Zero-Day. Think Beyond The Firewall.">
+  <meta property="og:url" content="https://teamdoomsday.github.io/">
+  <meta property="og:type" content="website">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/8ad2fdf1ca.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- ========== FIRST-VISIT LOADER REDIRECT ========== -->
+  <script>
+    (function() {
+      if (!sessionStorage.getItem('d00msday_loaded')) {
+        sessionStorage.setItem('d00msday_loaded', '1');
+        window.location.replace('loading.html');
+      }
+    })();
+  </script>
+
+  <!-- ========== MATRIX RAIN CANVAS ========== -->
+  <canvas id="matrix-rain"></canvas>
+
+  <!-- ========== PARTICLES CANVAS ========== -->
+  <canvas id="particles"></canvas>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>D00msDay<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="admin.html"><i class="fa-solid fa-lock"></i> Admin</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#writeups">Writeups</a></li>
+        <li><a href="#hall-of-fame">Gallery</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#join">Join</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-effects">
+      <div class="red-eclipse"></div>
+      <div class="circuit-overlay"></div>
+      <div class="grid-overlay"></div>
+      <div class="network-lines"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-terminal">
+        <span class="terminal-prompt">root@d00msday:~$</span>
+        <span class="typing-text" id="typing-text"></span><span class="cursor-blink">_</span>
+      </div>
+      <h1 class="hero-title glitch" data-text="D00msDay">D00msDay</h1>
+      <p class="hero-subtitle">Elite Cybersecurity Team</p>
+      <p class="hero-tagline">&ldquo;We Are the Zero-Day. Think Beyond The Firewall.&rdquo;</p>
+      <div class="hero-buttons">
+        <a href="#achievements" class="btn btn-primary">View Achievements</a>
+        <a href="#writeups" class="btn btn-ghost">Explore Writeups</a>
+        <a href="#join" class="btn btn-outline">Join Team</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item scroll-reveal">
+        <span class="stat-number" data-target="4">0</span>
+        <span class="stat-label">CTFs Participated</span>
+      </div>
+      <div class="stat-item scroll-reveal">
+        <span class="stat-number" data-target="50">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Flags Captured</span>
+      </div>
+      <div class="stat-item scroll-reveal">
+        <span class="stat-number" data-target="3">0</span><span class="stat-suffix">rd</span>
+        <span class="stat-label">Highest Rank</span>
+      </div>
+      <div class="stat-item scroll-reveal">
+        <span class="stat-number" data-target="3">0</span>
+        <span class="stat-label">Active Core Members</span>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse"><div class="wheel"></div></div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <span class="section-tag">&lt;about&gt;</span>
+        <h2 class="section-title">Who We Are</h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="about-content">
+        <div class="about-text scroll-reveal">
+          <p class="about-description">
+            D00msDay is a cybersecurity-focused Capture The Flag (CTF) and Hackathon team formed by students enrolled in BSc (Hons) Cyber Security and Ethical Hacking at Coventry University UK.
+          </p>
+          <p class="about-description">
+            The team was founded to explore offensive security, digital forensics, open-source intelligence, artificial intelligence, tool development, and cybersecurity research through practical competitions and collaborative projects.
+          </p>
+          <p class="about-description">
+            The team maintains a mysterious identity and focuses on skill, innovation, teamwork, and technical excellence rather than individual recognition.
+          </p>
+        </div>
+        <div class="about-timeline scroll-reveal">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">10 April 2026</span>
+              <h3>Formation</h3>
+              <p>D00msDay was officially formed at Coventry University UK.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-grid">
+        <div class="about-card scroll-reveal">
+          <div class="card-icon"><i class="fa-solid fa-crosshairs"></i></div>
+          <h3>Mission</h3>
+          <p>Advance cybersecurity skills through competitions, research, collaboration, and practical learning.</p>
+        </div>
+        <div class="about-card scroll-reveal">
+          <div class="card-icon"><i class="fa-solid fa-eye"></i></div>
+          <h3>Vision</h3>
+          <p>Become an internationally recognized cybersecurity team contributing to research, education, and open-source security tools.</p>
+        </div>
+      </div>
+      <div class="goals-grid">
+        <div class="goal-item scroll-reveal"><span class="goal-check">▸</span> International CTF Participation</div>
+        <div class="goal-item scroll-reveal"><span class="goal-check">▸</span> Open Source Security Tools</div>
+        <div class="goal-item scroll-reveal"><span class="goal-check">▸</span> AI Research</div>
+        <div class="goal-item scroll-reveal"><span class="goal-check">▸</span> Cybersecurity Awareness</div>
+        <div class="goal-item scroll-reveal"><span class="goal-check">▸</span> Security Education</div>
+        <div class="goal-item scroll-reveal"><span class="goal-check">▸</span> Community Contribution</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TEAM SECTION ========== -->
+  <section class="section team" id="team">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <span class="section-tag">&lt;team&gt;</span>
+        <h2 class="section-title">Core Members</h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="team-grid">
+        <!-- Phantom -->
+        <div class="team-card scroll-reveal">
+          <div class="card-glow"></div>
+          <div class="card-avatar">
+            <div class="avatar-placeholder">
+              <svg viewBox="0 0 100 100" class="avatar-svg">
+                <circle cx="50" cy="35" r="18" fill="none" stroke="#ff003c" stroke-width="1.5"/>
+                <path d="M25 80 Q25 55 50 55 Q75 55 75 80" fill="none" stroke="#ff003c" stroke-width="1.5"/>
+                <circle cx="43" cy="32" r="2" fill="#ff003c"/>
+                <circle cx="57" cy="32" r="2" fill="#ff003c"/>
+                <line x1="35" y1="25" x2="65" y2="25" stroke="#ff003c" stroke-width="1"/>
+              </svg>
+            </div>
+            <div class="avatar-ring"></div>
+          </div>
+          <h3 class="member-alias">Dr.DooM</h3>
+          <div class="member-roles">
+            <span class="role-tag">Web Exploitation</span>
+            <span class="role-tag">OSINT</span>
+            <span class="role-tag">Reconnaissance</span>
+          </div>
+          <div class="member-socials">
+            <a href="#" class="social-link" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+        <!-- Specter -->
+        <div class="team-card scroll-reveal">
+          <div class="card-glow"></div>
+          <div class="card-avatar">
+            <div class="avatar-placeholder">
+              <svg viewBox="0 0 100 100" class="avatar-svg">
+                <circle cx="50" cy="35" r="18" fill="none" stroke="#ff003c" stroke-width="1.5"/>
+                <path d="M25 80 Q25 55 50 55 Q75 55 75 80" fill="none" stroke="#ff003c" stroke-width="1.5"/>
+                <circle cx="43" cy="32" r="2" fill="#ff003c"/>
+                <circle cx="57" cy="32" r="2" fill="#ff003c"/>
+                <line x1="38" y1="40" x2="62" y2="40" stroke="#ff003c" stroke-width="1"/>
+              </svg>
+            </div>
+            <div class="avatar-ring"></div>
+          </div>
+          <h3 class="member-alias">SDGuru</h3>
+          <div class="member-roles">
+            <span class="role-tag">Digital Forensics</span>
+            <span class="role-tag">Incident Analysis</span>
+            <span class="role-tag">Threat Investigation</span>
+          </div>
+          <div class="member-socials">
+            <a href="#" class="social-link" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+        <!-- Cipher -->
+        <div class="team-card scroll-reveal">
+          <div class="card-glow"></div>
+          <div class="card-avatar">
+            <div class="avatar-placeholder">
+              <svg viewBox="0 0 100 100" class="avatar-svg">
+                <circle cx="50" cy="35" r="18" fill="none" stroke="#ff003c" stroke-width="1.5"/>
+                <path d="M25 80 Q25 55 50 55 Q75 55 75 80" fill="none" stroke="#ff003c" stroke-width="1.5"/>
+                <circle cx="43" cy="32" r="2" fill="#ff003c"/>
+                <circle cx="57" cy="32" r="2" fill="#ff003c"/>
+                <path d="M42 38 L50 44 L58 38" fill="none" stroke="#ff003c" stroke-width="1"/>
+              </svg>
+            </div>
+            <div class="avatar-ring"></div>
+          </div>
+          <h3 class="member-alias">shyCLONE</h3>
+          <div class="member-roles">
+            <span class="role-tag">Reverse Engineering</span>
+            <span class="role-tag">Cryptography</span>
+            <span class="role-tag">Tool Development</span>
+          </div>
+          <div class="member-socials">
+            <a href="#" class="social-link" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ACHIEVEMENTS SECTION ========== -->
+  <section class="section achievements" id="achievements">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <span class="section-tag">&lt;achievements&gt;</span>
+        <h2 class="section-title">Our Achievements</h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="achievements-timeline">
+        <div class="achievement-card scroll-reveal">
+          <div class="achievement-trophy"><i class="fa-solid fa-trophy"></i></div>
+          <div class="achievement-content">
+            <span class="achievement-rank">4th Place</span>
+            <h3>NetaNix CTF 24 Hours</h3>
+            <p>Ranked 4th out of 17 teams in an intense 24-hour capture the flag competition, demonstrating strong teamwork and technical skills under pressure.</p>
+          </div>
+        </div>
+        <div class="achievement-card scroll-reveal">
+          <div class="achievement-trophy"><i class="fa-solid fa-trophy"></i></div>
+          <div class="achievement-content">
+            <span class="achievement-rank">82nd Place</span>
+            <h3>Hack Astra 31 Hours International</h3>
+            <p>Competed against 450 teams from around the world in this 31-hour international cybersecurity marathon, securing a position in the top 20%.</p>
+          </div>
+        </div>
+        <div class="achievement-card scroll-reveal">
+          <div class="achievement-trophy"><i class="fa-solid fa-trophy"></i></div>
+          <div class="achievement-content">
+            <span class="achievement-rank">Participant</span>
+            <h3>Lumbini Province Police Hackathon</h3>
+            <p>Participated in a hackathon organized by Lumbini Province Police, tackling real-world cybersecurity challenges in a law enforcement context.</p>
+          </div>
+        </div>
+        <div class="achievement-card scroll-reveal">
+          <div class="achievement-trophy"><i class="fa-solid fa-trophy"></i></div>
+          <div class="achievement-content">
+            <span class="achievement-rank">Completed</span>
+            <h3>Digital Forensics CTF</h3>
+            <p>Successfully completed a digital forensics-focused CTF, applying knowledge of disk analysis, memory forensics, and evidence recovery techniques.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WRITEUPS SECTION ========== -->
+  <section class="section writeups" id="writeups">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <span class="section-tag">&lt;writeups&gt;</span>
+        <h2 class="section-title">Writeups</h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="writeups-grid">
+        <div class="writeup-card scroll-reveal">
+          <div class="writeup-cover">
+            <div class="writeup-icon">
+              <svg viewBox="0 0 60 60" width="60" height="60">
+                <rect x="8" y="8" width="44" height="44" rx="4" fill="none" stroke="#ff003c" stroke-width="1.5"/>
+                <line x1="16" y1="22" x2="44" y2="22" stroke="#ff003c" stroke-width="1.5"/>
+                <line x1="16" y1="30" x2="38" y2="30" stroke="#b3002d" stroke-width="1.5"/>
+                <line x1="16" y1="38" x2="32" y2="38" stroke="#b3002d" stroke-width="1.5"/>
+                <circle cx="42" cy="38" r="8" fill="none" stroke="#ff003c" stroke-width="1.5"/>
+                <line x1="47" y1="43" x2="52" y2="48" stroke="#ff003c" stroke-width="2"/>
+              </svg>
+            </div>
+          </div>
+          <div class="writeup-info">
+            <span class="writeup-category">International CTF</span>
+            <h3>Hack Astra Writeup</h3>
+            <p>A detailed walkthrough of our approach to the Hack Astra 31-hour international competition, covering web exploitation challenges, OSINT reconnaissance, and the strategies that helped us rank 82nd out of 450 teams.</p>
+            <a href="#" class="btn btn-sm">Read More</a>
+          </div>
+        </div>
+        <div class="writeup-card scroll-reveal">
+          <div class="writeup-cover">
+            <div class="writeup-icon">
+              <svg viewBox="0 0 60 60" width="60" height="60">
+                <circle cx="30" cy="30" r="22" fill="none" stroke="#ff003c" stroke-width="1.5"/>
+                <circle cx="30" cy="30" r="14" fill="none" stroke="#b3002d" stroke-width="1.5"/>
+                <circle cx="30" cy="30" r="6" fill="#ff003c" opacity="0.3"/>
+                <line x1="30" y1="8" x2="30" y2="16" stroke="#ff003c" stroke-width="1.5"/>
+                <line x1="30" y1="44" x2="30" y2="52" stroke="#ff003c" stroke-width="1.5"/>
+              </svg>
+            </div>
+          </div>
+          <div class="writeup-info">
+            <span class="writeup-category">Digital Forensics</span>
+            <h3>Digital Forensics Writeup</h3>
+            <p>Insights from our digital forensics CTF experience, including disk image analysis, memory dump examination, file carving techniques, and the tools we used to uncover hidden evidence.</p>
+            <a href="#" class="btn btn-sm">Read More</a>
+          </div>
+        </div>
+        <div class="writeup-card scroll-reveal">
+          <div class="writeup-cover">
+            <div class="writeup-icon">
+              <svg viewBox="0 0 60 60" width="60" height="60">
+                <polygon points="30,5 55,50 5,50" fill="none" stroke="#ff003c" stroke-width="1.5"/>
+                <line x1="30" y1="20" x2="30" y2="35" stroke="#ff003c" stroke-width="2"/>
+                <circle cx="30" cy="42" r="2" fill="#ff003c"/>
+              </svg>
+            </div>
+          </div>
+          <div class="writeup-info">
+            <span class="writeup-category">24-Hour CTF</span>
+            <h3>NetaNix Writeup</h3>
+            <p>Our 4th place finish at NetaNix CTF 24 Hours — a breakdown of the cryptography, reverse engineering, and web security challenges we solved during the competition.</p>
+            <a href="#" class="btn btn-sm">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HALL OF FAME ========== -->
+  <section class="section hall-of-fame" id="hall-of-fame">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <span class="section-tag">&lt;gallery&gt;</span>
+        <h2 class="section-title">Hall of Fame</h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="masonry-gallery" id="masonry-gallery">
+        <div class="gallery-item scroll-reveal" data-index="0">
+          <div class="gallery-placeholder">
+            <svg viewBox="0 0 200 150" width="200" height="150">
+              <rect x="10" y="10" width="180" height="130" rx="4" fill="none" stroke="#ff003c" stroke-width="1" opacity="0.5"/>
+              <text x="100" y="75" text-anchor="middle" fill="#ff003c" font-size="12" font-family="monospace">hall_of_fame_1.png</text>
+              <text x="100" y="95" text-anchor="middle" fill="#c0c0c0" font-size="9" font-family="monospace">Competition Photo</text>
+            </svg>
+          </div>
+          <div class="gallery-overlay"><span>CTF Competition</span></div>
+        </div>
+        <div class="gallery-item scroll-reveal" data-index="1">
+          <div class="gallery-placeholder">
+            <svg viewBox="0 0 200 200" width="200" height="200">
+              <rect x="10" y="10" width="180" height="180" rx="4" fill="none" stroke="#ff003c" stroke-width="1" opacity="0.5"/>
+              <text x="100" y="100" text-anchor="middle" fill="#ff003c" font-size="12" font-family="monospace">hall_of_fame_2.png</text>
+              <text x="100" y="120" text-anchor="middle" fill="#c0c0c0" font-size="9" font-family="monospace">Team Achievement</text>
+            </svg>
+          </div>
+          <div class="gallery-overlay"><span>Team Achievement</span></div>
+        </div>
+        <div class="gallery-item scroll-reveal" data-index="2">
+          <div class="gallery-placeholder">
+            <svg viewBox="0 0 200 120" width="200" height="120">
+              <rect x="10" y="10" width="180" height="100" rx="4" fill="none" stroke="#ff003c" stroke-width="1" opacity="0.5"/>
+              <text x="100" y="60" text-anchor="middle" fill="#ff003c" font-size="12" font-family="monospace">hall_of_fame_3.png</text>
+              <text x="100" y="80" text-anchor="middle" fill="#c0c0c0" font-size="9" font-family="monospace">Award Ceremony</text>
+            </svg>
+          </div>
+          <div class="gallery-overlay"><span>Award Ceremony</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EVENT GALLERY ========== -->
+  <section class="section event-gallery" id="event-gallery">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <span class="section-tag">&lt;events&gt;</span>
+        <h2 class="section-title">Event Gallery</h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="gallery-filters scroll-reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ctf">CTF</button>
+        <button class="filter-btn" data-filter="hackathon">Hackathon</button>
+        <button class="filter-btn" data-filter="certificates">Certificates</button>
+      </div>
+      <div class="event-grid">
+        <div class="event-item scroll-reveal" data-category="ctf">
+          <div class="event-placeholder">
+            <svg viewBox="0 0 300 200" width="300" height="200">
+              <rect x="10" y="10" width="280" height="180" rx="4" fill="none" stroke="#ff003c" stroke-width="1" opacity="0.4"/>
+              <text x="150" y="95" text-anchor="middle" fill="#ff003c" font-size="11" font-family="monospace">event1.jpg</text>
+              <text x="150" y="115" text-anchor="middle" fill="#c0c0c0" font-size="9" font-family="monospace">CTF Event</text>
+            </svg>
+          </div>
+          <span class="event-label">CTF Competition</span>
+        </div>
+        <div class="event-item scroll-reveal" data-category="hackathon">
+          <div class="event-placeholder">
+            <svg viewBox="0 0 300 200" width="300" height="200">
+              <rect x="10" y="10" width="280" height="180" rx="4" fill="none" stroke="#ff003c" stroke-width="1" opacity="0.4"/>
+              <text x="150" y="95" text-anchor="middle" fill="#ff003c" font-size="11" font-family="monospace">event2.jpg</text>
+              <text x="150" y="115" text-anchor="middle" fill="#c0c0c0" font-size="9" font-family="monospace">Hackathon Event</text>
+            </svg>
+          </div>
+          <span class="event-label">Hackathon</span>
+        </div>
+        <div class="event-item scroll-reveal" data-category="certificates">
+          <div class="event-placeholder">
+            <svg viewBox="0 0 300 200" width="300" height="200">
+              <rect x="10" y="10" width="280" height="180" rx="4" fill="none" stroke="#ff003c" stroke-width="1" opacity="0.4"/>
+              <text x="150" y="95" text-anchor="middle" fill="#ff003c" font-size="11" font-family="monospace">certificate1.jpg</text>
+              <text x="150" y="115" text-anchor="middle" fill="#c0c0c0" font-size="9" font-family="monospace">Certificate</text>
+            </svg>
+          </div>
+          <span class="event-label">Certificate</span>
+        </div>
+        <div class="event-item scroll-reveal" data-category="certificates">
+          <div class="event-placeholder">
+            <svg viewBox="0 0 300 200" width="300" height="200">
+              <rect x="10" y="10" width="280" height="180" rx="4" fill="none" stroke="#ff003c" stroke-width="1" opacity="0.4"/>
+              <text x="150" y="95" text-anchor="middle" fill="#ff003c" font-size="11" font-family="monospace">certificate2.jpg</text>
+              <text x="150" y="115" text-anchor="middle" fill="#c0c0c0" font-size="9" font-family="monospace">Certificate</text>
+            </svg>
+          </div>
+          <span class="event-label">Certificate</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BLOG SECTION ========== -->
+  <section class="section blog" id="blog">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <span class="section-tag">&lt;blog&gt;</span>
+        <h2 class="section-title">Blog</h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="blog-grid">
+        <article class="blog-card scroll-reveal">
+          <div class="blog-meta"><span class="blog-date">April 2026</span><span class="blog-cat">CTF</span></div>
+          <h3>Lessons From Our First CTF</h3>
+          <p>Our debut in competitive cybersecurity was humbling and eye-opening. We learned that preparation matters less than adaptability — the ability to pivot when a challenge doesn't yield to your initial approach. Time management, clear communication, and dividing tasks based on each member's strengths made the difference between frustration and progress.</p>
+          <a href="#" class="blog-link">Read More →</a>
+        </article>
+        <article class="blog-card scroll-reveal">
+          <div class="blog-meta"><span class="blog-date">April 2026</span><span class="blog-cat">Forensics</span></div>
+          <h3>Digital Forensics Fundamentals</h3>
+          <p>Digital forensics is the art of reconstructing digital events from fragments of data. From file system analysis to memory forensics, we explore the core techniques every aspiring investigator should know. Understanding how data persists — even after deletion — is the foundation of uncovering digital evidence.</p>
+          <a href="#" class="blog-link">Read More →</a>
+        </article>
+        <article class="blog-card scroll-reveal">
+          <div class="blog-meta"><span class="blog-date">May 2026</span><span class="blog-cat">Teamwork</span></div>
+          <h3>Teamwork In Cybersecurity</h3>
+          <p>Cybersecurity is rarely a solo endeavor. In CTF competitions, the teams that win are not necessarily the ones with the best individual players, but the ones that communicate effectively, trust each other's expertise, and maintain morale under pressure. Here is what we have learned about building a functional security team.</p>
+          <a href="#" class="blog-link">Read More →</a>
+        </article>
+        <article class="blog-card scroll-reveal">
+          <div class="blog-meta"><span class="blog-date">May 2026</span><span class="blog-cat">OSINT</span></div>
+          <h3>OSINT For Beginners</h3>
+          <p>Open Source Intelligence is the practice of gathering and analyzing publicly available information. It is often the first phase of any security assessment and a critical skill in CTF competitions. From Google dorking to social media analysis, we cover the essential tools and methodologies for effective reconnaissance.</p>
+          <a href="#" class="blog-link">Read More →</a>
+        </article>
+        <article class="blog-card scroll-reveal">
+          <div class="blog-meta"><span class="blog-date">June 2026</span><span class="blog-cat">Education</span></div>
+          <h3>Why CTFs Matter</h3>
+          <p>Capture The Flag competitions are more than just games — they are one of the most effective ways to develop real-world cybersecurity skills. CTFs force you to think like an attacker, work under time constraints, and apply knowledge across multiple domains. Here is why every aspiring security professional should participate.</p>
+          <a href="#" class="blog-link">Read More →</a>
+        </article>
+        <article class="blog-card scroll-reveal">
+          <div class="blog-meta"><span class="blog-date">June 2026</span><span class="blog-cat">Development</span></div>
+          <h3>Building Security Tools</h3>
+          <p>Every great security practitioner eventually builds their own tools. Whether it is a custom scanner, an automation script, or a proof-of-concept exploit, tool development deepens your understanding of how systems work — and how they break. We share our journey into building practical security utilities.</p>
+          <a href="#" class="blog-link">Read More →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== JOIN TEAM SECTION ========== -->
+  <section class="section join" id="join">
+    <div class="container">
+      <div class="join-content scroll-reveal">
+        <span class="section-tag">&lt;recruitment&gt;</span>
+        <h2 class="section-title">Join D00msDay</h2>
+        <div class="title-line"></div>
+        <p class="join-description">
+          D00msDay occasionally opens temporary positions for competitions that require additional members. Interested individuals may apply through the application form when opportunities become available.
+        </p>
+        <a href="https://forms.google.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Apply Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <span class="section-tag">&lt;contact&gt;</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-item scroll-reveal">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff003c" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h3>Email</h3>
+          <a href="mailto:teams.DoomsDay@proton.me">teams.DoomsDay@proton.me</a>
+        </div>
+        <div class="contact-item scroll-reveal">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff003c" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <h3>Discord</h3>
+          <p>D00msDay</p>
+        </div>
+        <div class="contact-item scroll-reveal">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff003c" stroke-width="2"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </div>
+          <h3>GitHub</h3>
+          <a href="https://teamdoomsday.github.io/" target="_blank" rel="noopener noreferrer">teamdoomsday.github.io</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#hero" class="footer-logo">
+            <span class="logo-bracket">&lt;</span>D00msDay<span class="logo-bracket">/&gt;</span>
+          </a>
+          <p class="footer-tagline">&ldquo;We Are the Zero-Day. Think Beyond The Firewall.&rdquo;</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="#about">About</a>
+          <a href="#team">Team</a>
+          <a href="#achievements">Achievements</a>
+          <a href="#writeups">Writeups</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-social">
+          <h4>Connect</h4>
+          <div class="social-icons">
+            <a href="https://teamdoomsday.github.io/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="mailto:team.doomsday@gmail.com" aria-label="Email">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 D00msDay. Built for learning, research, innovation, and cybersecurity excellence.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">&times;</button>
+    <div class="lightbox-content" id="lightbox-content"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
